@@ -7,8 +7,7 @@ int main()
     char passwords[10][50];
     int userCount = 0;
     int loggedIn = 0;
-    char name[50];
-    char pass[50];
+    char name[50], pass[50];
 
     int totalSeats = 50;
     int availableSeats = 50;
@@ -41,7 +40,7 @@ int main()
                 }
                 else
                 {
-                    printf("User limit reached.\n");
+                    printf(" User limit reached.\n");
                 }
             }
             else if (choice == 2)
@@ -80,14 +79,15 @@ int main()
         
         else
         {
-            printf("\n1. Book Ticket");
-            printf("\n2. Cancel Ticket");
-            printf("\n3. Check Bus Status");
-            printf("\n4. Logout");
-            printf("\nEnter your choice: ");
+            printf("\n================ BUS MENU ================\n");
+            printf("1. Book Ticket\n");
+            printf("2. Cancel Ticket\n");
+            printf("3. Check Bus Status\n");
+            printf("4. Logout\n");
+            printf("Enter your choice: ");
             scanf("%d", &choice);
 
-            
+          
             if (choice == 1)
             {
                 printf("Enter Bus Number: ");
@@ -109,7 +109,7 @@ int main()
                 }
             }
 
-        
+            
             else if (choice == 2)
             {
                 printf("Enter Bus Number: ");
@@ -130,24 +130,25 @@ int main()
                 }
             }
 
-            
+           
             else if (choice == 3)
             {
-                printf("\nBus Number: 101");
-                printf("\nRoute: Delhi to Goa");
-                printf("\nTotal Seats: %d", totalSeats);
-                printf("\nAvailable Seats: %d", availableSeats);
-                printf("\nAmount per Seat: Rs.%d\n", amount);
+                printf("\n================ BUS STATUS ================\n");
+                printf("Bus Number: 101\n");
+                printf("Route: Delhi to Goa\n");
+                printf("Total Seats: %d\n", totalSeats);
+                printf("Available Seats: %d\n", availableSeats);
+                printf("Amount per Seat: Rs.%d\n", amount);
+                printf("===========================================\n");
             }
 
-            
             else if (choice == 4)
             {
                 loggedIn = 0;
-                printf("You have logged out.\n");
+                printf("\nYou have logged out.\n");
             }
 
-
+            
             else
             {
                 printf("Invalid choice, try again.\n");
