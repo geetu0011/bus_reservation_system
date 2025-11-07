@@ -7,7 +7,8 @@ int main()
     char passwords[10][50];
     int userCount = 0;
     int loggedIn = 0;
-    char name[50], pass[50];
+    char name[50];
+    char pass[50];
 
     int totalSeats = 50;
     int availableSeats = 50;
@@ -18,6 +19,7 @@ int main()
 
     while (1)
     {
+        
         if (loggedIn == 0)
         {
             printf("\n1. Register");
@@ -74,7 +76,9 @@ int main()
                 printf("Invalid choice, try again.\n");
             }
         }
-        else 
+
+        
+        else
         {
             printf("\n1. Book Ticket");
             printf("\n2. Cancel Ticket");
@@ -83,6 +87,7 @@ int main()
             printf("\nEnter your choice: ");
             scanf("%d", &choice);
 
+            
             if (choice == 1)
             {
                 printf("Enter Bus Number: ");
@@ -93,14 +98,18 @@ int main()
                 if (seat > 0 && seat <= availableSeats)
                 {
                     availableSeats -= seat;
-                    printf("\nBooking Successful! %d seats booked on Bus %d\n", seat, bus);
-                    printf("Total Amount: Rs.%d\n", seat * amount);
+                    printf("\nBooking Successful!");
+                    printf("\nBus Number: %d", bus);
+                    printf("\nSeats Booked: %d", seat);
+                    printf("\nTotal Amount: Rs.%d\n", seat * amount);
                 }
                 else
                 {
                     printf("Not enough seats or invalid number.\n");
                 }
             }
+
+        
             else if (choice == 2)
             {
                 printf("Enter Bus Number: ");
@@ -108,29 +117,37 @@ int main()
                 printf("Enter Number of Seats to Cancel: ");
                 scanf("%d", &seat);
 
-                if (seat > 0 && availableSeats + seat <= totalSeats)
+                if (seat > 0 && (availableSeats + seat) <= totalSeats)
                 {
                     availableSeats += seat;
-                    printf("\nCancellation Successful! %d seats cancelled on Bus %d\n", seat, bus);
+                    printf("\nCancellation Successful!");
+                    printf("\nBus Number: %d", bus);
+                    printf("\nSeats Cancelled: %d\n", seat);
                 }
                 else
                 {
                     printf("Invalid cancellation.\n");
                 }
             }
+
+            
             else if (choice == 3)
             {
                 printf("\nBus Number: 101");
-                printf("\nFrom: Delhi To Goa");
+                printf("\nRoute: Delhi to Goa");
                 printf("\nTotal Seats: %d", totalSeats);
                 printf("\nAvailable Seats: %d", availableSeats);
                 printf("\nAmount per Seat: Rs.%d\n", amount);
             }
+
+            
             else if (choice == 4)
             {
                 loggedIn = 0;
                 printf("You have logged out.\n");
             }
+
+
             else
             {
                 printf("Invalid choice, try again.\n");
