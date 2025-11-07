@@ -5,14 +5,17 @@ int main()
 {
     char usernames[10][50];
     char passwords[10][50];
-    int userCount = 0;
-    int loggedIn = 0;
-    char name[50], pass[50];
+    int userCount = 0;   
+    int loggedIn = 0;    
 
+   
     int totalSeats = 50;
     int availableSeats = 50;
-    int amount = 500;
+    int ticketPrice = 500;
+
+    
     int choice, seat, bus;
+    char name[50], pass[50];
 
     printf("\n================ BUS RESERVATION SYSTEM ================\n");
 
@@ -26,6 +29,7 @@ int main()
             printf("\n3. Exit");
             printf("\nEnter your choice: ");
             scanf("%d", &choice);
+           
 
             if (choice == 1)
             {
@@ -40,9 +44,11 @@ int main()
                 }
                 else
                 {
-                    printf(" User limit reached.\n");
+                    printf("User limit reached. Cannot register more users.\n");
                 }
             }
+
+            
             else if (choice == 2)
             {
                 printf("Enter username: ");
@@ -63,16 +69,20 @@ int main()
                 }
 
                 if (!found)
-                    printf("Wrong username or password.\n");
+                    printf(" Wrong username or password. Try again.\n");
             }
+
+            
             else if (choice == 3)
             {
-                printf("\nThank you for using the system!\n");
+                printf("\nThank you for using the Bus Reservation System!\n");
                 break;
             }
+
+           
             else
             {
-                printf("Invalid choice, try again.\n");
+                printf("Invalid choice, please try again.\n");
             }
         }
 
@@ -87,7 +97,7 @@ int main()
             printf("Enter your choice: ");
             scanf("%d", &choice);
 
-          
+            
             if (choice == 1)
             {
                 printf("Enter Bus Number: ");
@@ -101,11 +111,11 @@ int main()
                     printf("\nBooking Successful!");
                     printf("\nBus Number: %d", bus);
                     printf("\nSeats Booked: %d", seat);
-                    printf("\nTotal Amount: Rs.%d\n", seat * amount);
+                    printf("\nTotal Amount: Rs.%d\n", seat * ticketPrice);
                 }
                 else
                 {
-                    printf("Not enough seats or invalid number.\n");
+                    printf(" Not enough seats or invalid seat number.\n");
                 }
             }
 
@@ -126,32 +136,33 @@ int main()
                 }
                 else
                 {
-                    printf("Invalid cancellation.\n");
+                    printf("Invalid cancellation request.\n");
                 }
             }
 
-           
+            
             else if (choice == 3)
             {
                 printf("\n================ BUS STATUS ================\n");
                 printf("Bus Number: 101\n");
-                printf("Route: Delhi to Goa\n");
+                printf("Route: Delhi ➜ Goa\n");
                 printf("Total Seats: %d\n", totalSeats);
                 printf("Available Seats: %d\n", availableSeats);
-                printf("Amount per Seat: Rs.%d\n", amount);
+                printf("Ticket Price per Seat: Rs.%d\n", ticketPrice);
                 printf("===========================================\n");
             }
 
+            
             else if (choice == 4)
             {
-                loggedIn = 0;
-                printf("\nYou have logged out.\n");
+                loggedIn = 0; 
+                printf("\nYou have logged out successfully.\n");
             }
 
             
             else
             {
-                printf("Invalid choice, try again.\n");
+                printf("Invalid choice, please try again.\n");
             }
         }
     }
