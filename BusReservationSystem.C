@@ -14,7 +14,7 @@ int main()
     do
     {
         printf("\n1. Book Ticket");
-        printf("\n2. Cancel Ticket");
+        printf("\n2. Cancel Ticket"); 
         printf("\n3. Check Bus Status");
         printf("\n4. Exit");
         printf("\nEnter your choice:-");
